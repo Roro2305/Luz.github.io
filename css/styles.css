@@ -1,0 +1,309 @@
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== FUENTES ===== */
+body,
+p,
+span,
+li,
+a,
+small {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+button,
+.corazon,
+footer {
+    font-family: 'Dancing Script', cursive;
+}
+
+/* ===== BODY ===== */
+body {
+    background: linear-gradient(180deg, #a855f7, #c084fc, #d8b4fe);
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ===== TEXTO CENTRAL ===== */
+.texto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.texto h1 {
+    font-size: clamp(20px, 20vw, 140px);
+    line-height: 1.05;
+    margin: 0;
+    color: #ffffff;
+    text-shadow: 0 0 40px rgba(255,255,255,0.8);
+}
+
+/* ===== HEADER ===== */
+header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 6em;
+    text-shadow: 0 0 40px rgba(255,255,255,0.9);
+}
+
+header h2 {
+    font-size: 2.3em;
+    margin-top: 20px;
+}
+
+/* ===== SECCIONES ===== */
+.page-section {
+    padding: 100px 20px;
+}
+
+.bg-faded {
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 50px;
+}
+
+.bg-faded p {
+    margin-bottom: 1.2em;
+    line-height: 1.8;
+}
+
+/* ===== BOTONES ===== */
+button {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 50px;
+    background: #ffffff;
+    color: #a855f7;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #f3e8ff;
+    transform: scale(1.1);
+}
+
+/* ===== CORAZÓN ===== */
+.corazon {
+    font-size: 10em;
+    animation: latido 1.2s infinite;
+    margin-top: 20px;
+}
+
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+/* ===== IMÁGENES ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== GALERÍA (TAMAÑO NATURAL) ===== */
+.img-galeria {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.35);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.img-galeria:hover {
+    transform: scale(1.04);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+}
+
+/* Espaciado ordenado entre fotos */
+.row > div {
+    margin-bottom: 30px;
+}
+
+/* ===== TARJETA FOTO ===== */
+.foto-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.foto-desc {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.foto-card:hover .foto-desc {
+    opacity: 1;
+}
+
+/* ===== BOTÓN MÚSICA ===== */
+.btn-musica {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    background: #ffffff;
+    color: #a855f7;
+    z-index: 9999;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* ===== MODAL ===== */
+.modal-romantico {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9998;
+}
+
+.modal-contenido {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+/* ===== CORAZONES FLOTANTES ===== */
+.flotante {
+    position: fixed;
+    bottom: -80px;
+    animation: subir 7s linear forwards;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes subir {
+    to {
+        transform: translateY(-130vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ===== BUZÓN ===== */
+.buzon-mensaje {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.buzon-icono {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.buzon-texto {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.buzon-input {
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 25px;
+    border: none;
+    width: 70%;
+    max-width: 400px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.btn-buzon {
+    padding: 10px 25px;
+    font-size: 1em;
+    border-radius: 25px;
+    background: #ffffff;
+    color: #a855f7;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-buzon:hover {
+    background: #f3e8ff;
+    transform: scale(1.05);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    width: 100%;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, #a87ef1, #a855f7);
+    text-align: center;
+    font-size: 1.6em;
+    letter-spacing: 1px;
+}
+
+footer,
+footer * {
+    transform: none !important;
+}
+
+.footer-texto {
+    max-width: 900px;
+    margin: 0 auto;
+    opacity: 0.95;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3.5em;
+    }
+
+    header h2 {
+        font-size: 1.6em;
+    }
+
+    .corazon {
+        font-size: 4em;
+    }
+
+    .bg-faded {
+        padding: 30px;
+    }
+
+    footer {
+        font-size: 1.2em;
+        padding: 30px 15px;
+    }
+}
